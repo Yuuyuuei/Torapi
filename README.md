@@ -11,7 +11,9 @@ https://torrentapi.org/apidocs_v2.txt
 Installation
 ------------
 
-Installation notes go here.
+```
+python setup.py install
+```
 
 Usage
 ------------
@@ -76,16 +78,12 @@ Categories
 Category.*
 
 * ALL
-
 * XXX
 * NON_XXX
-
 * MUSIC
 * MUSIC_MP3
 * MUSIC_FLAC
-
 * EBOOKS
-
 * MOVIES
 * MOVIES_FULL_BD
 * MOVIES_X264_1080
@@ -95,18 +93,15 @@ Category.*
 * MOVIES_XVID_720
 * MOVIES_XVID
 * MOVIES_X264
-
 * TV
 * TV_SHOWS
 * TV_EPISODES
 * TV_HD_EPISODES
-
 * GAMES
 * GAMES_PS3
 * GAMES_PC_ISO
 * GAMES_PC_RIP
 * GAMES_XBOX360
-
 * SOFTWARE
 * SOFTWARE_PC_ISO
 ```

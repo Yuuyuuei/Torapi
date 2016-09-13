@@ -11,13 +11,13 @@ if version < '2.2.3':
     DistributionMetadata.classifiers = None
     DistributionMetadata.download_url = None
 
-from Torapi import __version__ as version, __author__ as author
+from Torapi import __version__ as version
 
 setup(
     name='Torapi',
     version=version,
-    install_requires=['requests']
-    author=author,
+    install_requires=['requests'],
+    author='Eugene Tan',
     author_email='eugene@eugenetan.co.uk',
     description='Unofficial simple http://torrentapi.org/ API library',
     long_description='Unofficial simple http://torrentapi.org/ API library.',
