@@ -28,3 +28,7 @@ SOFTWARE.
 """
 __version__ = '1.0.0'
 __author__ = 'Eugene Tan'
+__email__ = 'eugene@eugenetan.co.uk'
+
+from Torapi import Torapi
+from Filters import *

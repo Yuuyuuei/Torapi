@@ -3,27 +3,35 @@ try:
     from setuptools import setup
 except ImportError:
     from distutils.core import setup
-
-# Allow trove classifiers in previous python versions
+	
+# patch distutils if it can't cope with the "classifiers" or
+# "download_url" keywords
 from sys import version
 if version < '2.2.3':
     from distutils.dist import DistributionMetadata
     DistributionMetadata.classifiers = None
     DistributionMetadata.download_url = None
 
-from Torapi import __version__ as version
+from Torapi import __version__, __author__, __email__
+
+license_text = open('LICENSE').read()
+long_description = open('README.md').read()
 
 setup(
     name='Torapi',
-    version=version,
+    version=__version__,
+	url = 'https://github.com/Yuuyuuei/Torapi',
     install_requires=['requests'],
-    author='Eugene Tan',
-    author_email='eugene@eugenetan.co.uk',
+    author=__author__,
+    author_email=__email__,
     description='Unofficial simple http://torrentapi.org/ API library',
-    long_description='Unofficial simple http://torrentapi.org/ API library.',
-    license='MIT License',
+    long_description=long_description,
+    license=license_text,
+	packages=['torapi'],
+    data_files=[('torapi', ['LICENSE', 'README.md'])],
     classifiers=[
         'Development Status :: 4 - Beta',
+		'License :: OSI Approved :: MIT License',
         'Intended Audience :: Developers',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2.7'
