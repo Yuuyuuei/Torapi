@@ -19,7 +19,7 @@ Usage
 ------------
 
 ```python
-from Torapi import Torapi
+from torapi import Torapi
 
 t = Torapi()
 
