@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #!/usr/bin/env python
-import requests
+import requests, time
 from Filters import Category, Sort
 
 BASE_URL = "https://torrentapi.org/pubapi_v2.php"
@@ -42,7 +42,7 @@ class Torapi(object):
 		return self
 
 	def Limit(self, integer = 25):
-		self.Filter = self.Filter + "&limit=" + integer
+		self.Filter = self.Filter + "&limit=" + str(integer)
 		return self
 
 	def Sort(self, sort = Sort.LAST):
