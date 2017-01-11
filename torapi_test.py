@@ -1,29 +1,4 @@
-============
-Torapi
-============
-
-Unofficial http://torrentapi.org/ API library
-
-https://torrentapi.org/apidocs_v2.txt
-
-**The api has a 1req/2s limit.**
-
-Installation
-------------
-
-```
-python setup.py install
-
-Run this to test if it was successful
-python torapi_test.py
-
-Successful if no error returns
-```
-
-Usage
-------------
-
-```python
+# -*- coding: utf-8 -*-
 from Torapi import Torapi
 from Torapi.Filters import *
 
@@ -74,40 +49,5 @@ t.List().Limit(25).Sort(Sort.LAST).Ranked(False).Extended(True).Get()
 
 # Every method can be simplified with just Get()
 t.Get(search_string = "Torrent Name", search_IMDB = "tt123456", search_TVDB = "123456", search_moviedb = "123456", 
-	category = Category.ALL, limit = 25, sort = Sort.LAST, min_seeders = 10, min_leechers = 10, extended = False, 
-	ranked = True)
-```
-
-Categories
-------------
-
-Category.*
-
-* ALL
-* XXX
-* NON_XXX
-* MUSIC
-* MUSIC_MP3
-* MUSIC_FLAC
-* EBOOKS
-* MOVIES
-* MOVIES_FULL_BD
-* MOVIES_X264_1080
-* MOVIES_X264_720
-* MOVIES_BD_REMUX
-* MOVIES_X264_3D
-* MOVIES_XVID_720
-* MOVIES_XVID
-* MOVIES_X264
-* TV
-* TV_SHOWS
-* TV_EPISODES
-* TV_HD_EPISODES
-* GAMES
-* GAMES_PS3
-* GAMES_PC_ISO
-* GAMES_PC_RIP
-* GAMES_XBOX360
-* SOFTWARE
-* SOFTWARE_PC_ISO
-```
+category = Category.ALL, limit = 25, sort = Sort.LAST, min_seeders = 10, min_leechers = 10, extended = False, 
+ranked = True)

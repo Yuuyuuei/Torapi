@@ -3,7 +3,7 @@ try:
     from setuptools import setup
 except ImportError:
     from distutils.core import setup
-	
+
 # patch distutils if it can't cope with the "classifiers" or
 # "download_url" keywords
 from sys import version
@@ -27,8 +27,8 @@ setup(
     description='Unofficial simple http://torrentapi.org/ API library',
     long_description=long_description,
     license=license_text,
-	packages=['torapi'],
-    data_files=[('torapi', ['LICENSE', 'README.md'])],
+	packages=['Torapi'],
+    data_files=[('Torapi', ['LICENSE', 'README.md'])],
     classifiers=[
         'Development Status :: 4 - Beta',
 		'License :: OSI Approved :: MIT License',
