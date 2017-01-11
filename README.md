@@ -12,6 +12,7 @@ Installation
 ------------
 
 ```
+pip install requests
 python setup.py install
 
 Run this to test if it was successful
