@@ -4,7 +4,7 @@ import requests, time
 from Filters import Category, Sort
 
 BASE_URL = "https://torrentapi.org/pubapi_v2.php"
-TOKEN_URL = BASE_URL + "?get_token=get_token"
+TOKEN_URL = BASE_URL + "?app_id=Torapi&get_token=get_token"
 
 # Torapi().Search(filter).json();
 class Torapi(object):
@@ -112,7 +112,7 @@ class Torapi(object):
 		if not ranked:
 			self.Ranked(ranked)
 
-		r = requests.get(BASE_URL + "?token=" + token + self.Filter)
+		r = requests.get(BASE_URL + "?app_id=Torapi&token=" + token + self.Filter)
 		return r.json()
 
 	@staticmethod
