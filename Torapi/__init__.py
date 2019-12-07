@@ -27,8 +27,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 """
 __version__ = '1.0.0'
-__author__ = 'Eugene Tan'
-__email__ = 'eugene@eugenetan.co.uk'
+__author__ = 'Yuuji'
+__email__ = 'hello@yuuyu.dev'
 
 from Torapi import Torapi
 from Filters import *

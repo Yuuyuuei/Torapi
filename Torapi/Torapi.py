@@ -1,10 +1,7 @@
 # -*- coding: utf-8 -*-
 #!/usr/bin/env python
-import requests, time
+import requests
 from Filters import Category, Sort
-
-BASE_URL = "https://torrentapi.org/pubapi_v2.php"
-TOKEN_URL = BASE_URL + "?app_id=Torapi&get_token=get_token"
 
 # Torapi().Search(filter).json();
 class Torapi(object):
@@ -74,8 +71,6 @@ class Torapi(object):
 	def Get(self, search_string = None, search_IMDB = None, search_TVDB = None, search_moviedb = None, 
 	category = None, limit = None, sort = None, min_seeders = None, min_leechers = None, extended = False, 
 	ranked = True):
-		token = Torapi.GetToken()
-
 		if not search_string and not search_IMDB and not search_TVDB and not search_moviedb and not self._searched:
 			self.List()
 		
@@ -112,12 +107,18 @@ class Torapi(object):
 		if not ranked:
 			self.Ranked(ranked)
 
-		r = requests.get(BASE_URL + "?app_id=Torapi&token=" + token + self.Filter)
-		return r.json()
+		request = session.get(BASE_URL + "?app_id=Torapi&token=" + TOKEN + self.Filter)
+		return request.json()
 
 	@staticmethod
 	def GetToken():
 		""" Gets a token required to make other requests """
-		request = requests.get(TOKEN_URL)
+		request = session.get(BASE_URL, params={'app_id': 'Torapi', 'get_token': 'get_token'})
 		token = request.json()["token"]
 		return token
+
+BASE_URL = "https://torrentapi.org/pubapi_v2.php"
+
+session = requests.Session()
+session.headers.update({'Accept': 'application/json', 'User-Agent': 'Torapi/Torapi'})
+TOKEN = Torapi.GetToken()
